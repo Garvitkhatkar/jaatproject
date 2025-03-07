@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      background: url('http://codingstella.com/wp-content/uploads/2024/01/download-5.jpeg') no-repeat;
+      background-size: cover;
+      background-position: center;
+      animation: animateBg 5s linear infinite;
+    }
+
+    @keyframes animateBg {
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    .login-box {
+      position: relative;
+      width: 500px;
+      height: 580px;
+      background: transparent;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(15px);
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .input-box {
+      position: relative;
+      width: 100%;
+      margin: 20px 0;
+      border-bottom: 1px solid #fff;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+      color: #fff;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:valid ~ label {
+      top: -5px;
+    }
+
+    .input-box input {
+      width: 100%;
+      height: 50px;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1.2em;
+      color: #fff;
+      padding: 0 35px 0 5px;
+    }
+
+    .remember-forgot {
+      margin: -15px 0 20px;
+      font-size: 1em;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .remember-forgot label input {
+      margin-right: 3px;
+    }
+
+    .remember-forgot a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .remember-forgot a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.2em;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .register-link {
+      font-size: 1.1em;
+      color: #fff;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .register-link p a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .register-link p a:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 500px) {
+      .login-box {
+        width: 90%;
+        height: auto;
+        border: none;
+        border-radius: 0;
+        padding: 15px;
+      }
+
+      .input-box {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      button {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="login-box">
+      <form id="signup-form" method="POST">
+        <h2>Signup</h2>
+        
+        <div class="input-box">
+          <input type="text" id="name" name="name" required>
+          <label for="name">Full Name</label>
+        </div>
+        
+        <div class="input-box">
+          <input type="email" id="email" name="email" required>
+          <label for="email">Email</label>
+          <div id="email-error" class="error-message"></div>
+        </div>
+
+        <div class="input-box">
+          <input type="password" id="password" name="password" required>
+          <label for="password">Password</label>
+          <div id="password-error" class="error-message"></div>
+        </div>
+
+        <div class="input-box">
+          <input type="password" id="confirm-password" name="confirm-password" required>
+          <label for="confirm-password">Confirm Password</label>
+          <div id="confirm-password-error" class="error-message"></div>
+        </div>
+
+        <div class="remember-forgot">
+          <label><input type="checkbox" name="terms" required> I agree to the <a href="term and condition.html">Terms and Conditions</a></label>
+        </div>
+
+        <button type="submit">Signup</button>
+
+        <div class="register-link">
+          <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+<script>
+document.getElementById("signup-form").addEventListener("submit", function(event) {
+    event.preventDefault(); 
+
+    let formIsValid = true;
+
+    document.getElementById("email-error").textContent = "";
+    document.getElementById("password-error").textContent = "";
+    document.getElementById("confirm-password-error").textContent = "";
+
+    const email = document.getElementById("email").value;
+    const emailError = document.getElementById("email-error");
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    if (!emailRegex.test(email)) {
+        emailError.textContent = "Please enter a valid email address.";
+        formIsValid = false;
+    }
+
+    const password = document.getElementById("password").value;
+    const passwordError = document.getElementById("password-error");
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+        passwordError.textContent = "Password must be at least 8 characters, include uppercase, lowercase, number, and special character.";
+        formIsValid = false;
+    }
+
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const confirmPasswordError = document.getElementById("confirm-password-error");
+
+    if (password !== confirmPassword) {
+        confirmPasswordError.textContent = "Passwords do not match.";
+        formIsValid = false;
+    }
+
+    if (formIsValid) {
+
+        window.location.href = "index.html"; 
+    } else {
+        console.log("Form is invalid!"); 
+    }
+});
+</script>
+</html>

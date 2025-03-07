@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecasts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="images/wether back.mp4" type="video/mp4">
+    </video>
+
+    <div id="menu-toggle" class="menu-icon">☰</div>
+    <div id="sidebar" class="sidebar">
+        <a href="#" class="close-btn" id="close-sidebar">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <div class="container">
+        <div class="input">
+            <h1>𝐖𝐞𝐚𝐭𝐡𝐞𝐫 𝐋𝐞𝐧𝐬</h1>
+            <input id="city-input" type="text" placeholder="Enter city name">
+            <button id="search-button">Search</button>
+            <button id="voice-button">🎤</button>
+        </div>
+        <div id="output">
+            <div>
+                <p id="nearby" class="nearby"></p>
+            </div>
+            <div>
+                <img id="condition-icon" src="images/default.png" alt="condition icon">
+                <p id="city-temp" class="temp"></p>
+            </div>
+            <div>
+                <h3 id="city-name" class="name"></h3>
+            </div>
+            <div>
+                <h4 id="city-time" class="time"></h4>
+            </div>
+            <div class="additional-info">
+                <div class="info-item">
+                    <img src="images/wind.png" alt="Wind Speed">
+                    <p id="wind-speed">: 0 km/h</p>
+                </div>
+                <div class="info-item">
+                    <img src="images/humidity.png" alt="Humidity">
+                    <p id="humidity">: 0%</p>
+                </div>
+            </div>
+            <h3>Hourly Forecast</h3>
+            <div class="flex-container" id="hourly-forecast"></div>
+            <h3>3-Day Forecast</h3>
+            <div class="flex-container" id="forecast"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

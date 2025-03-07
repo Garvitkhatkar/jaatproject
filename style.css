@@ -1,0 +1,269 @@
+body {
+  font-family: Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.login-container {
+  max-width: 400px;
+  margin: 100px auto;
+  margin-left: 500px;
+  text-align: center;
+  padding: 20px;
+  border : 2px solid black;
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px black;
+  background-image: linear-gradient( 90deg, rgb(149, 218, 149), rgb(73, 73, 109) );
+  z-index:1;
+  position:fixed;
+}
+#back-img{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.input-group input[type="text"], 
+.input-group input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+
+
+
+.head {
+  margin-left: 20px;
+  padding-left: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 10px 10px 10px black;
+  position: relative;
+  z-index: 1; 
+  backdrop-filter: blur(100px);
+}
+
+input[type="text"] {
+  width: 60%;
+  height: 25px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-size: large;
+}
+.input h1{
+  font-size: 50px;
+  margin-top: -2px;
+  margin-bottom:-2px;
+}
+#voice-button{
+  border-radius: 100px;
+  border: black solid 1.5px;
+}
+#voice-button:hover{
+  background:linear-gradient(90deg,skyblue,rgb(40, 93, 218));
+  font-size: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  background: linear-gradient(to right, #FF7E5F, #FEB47B);
+  cursor: pointer;
+  border-radius: 50px;
+  border: black 1px solid;
+}
+
+button:hover {
+  background-color:black;
+  color: whitesmoke;
+}
+
+#output {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: large;
+  color: white;
+}
+
+
+#city-temp {
+  font-weight: 900;
+  font-size: 24px;
+}
+#condition_icon{
+  max-width: 100%;
+  width: 80px;
+  height: auto;
+}
+
+.flex-container {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.forecast-day {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background: #4b74ab;
+  width: 150px;
+  color: white;
+  text-align: center;
+}
+.forecast-day:hover {
+  background-color: #055ef9;
+}
+
+.forecast-day img {
+  width: 40px;
+  height: auto;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+  color: aliceblue;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.info-item img {
+  width: 60px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.hourly-forecast {
+  margin: 10px;
+  width: 100px;
+  background: #4b74ab;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.hourly-forecast:hover {
+  background-color: #055ef9;
+  font-size: 20px;
+  transition: 0.3s;
+  box-shadow: 5px 10px 5px rgb(6, 6, 6);
+}
+.hourly-forecast img {
+  width: 50px;
+  height: auto;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  color:black;
+  overflow-x: hidden;
+  transition: 1s;
+  padding-top: 20px;
+  box-shadow:8px 0px 10px black;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar a:hover {
+  background: linear-gradient(100deg,skyblue,blue);
+  border: 2px solid black;
+  border-radius: 20px;
+
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  color:black;
+  cursor: pointer;
+}
+.menu-icon {
+  
+  font-size: 24px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 30px;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.menu-icon:hover {
+  background-color: #0056b3;
+}
+.sidebar.active {
+  left: 0;
+}
